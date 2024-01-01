@@ -9,7 +9,7 @@ FACEBOOK MESSENGER BOTPACK DEVELOPED BY MAHIRO CHAN INSPIRED BY MIRAI NODEJS
 
 # 📷 SCREENSHOTS
 
-<img src="Screenshot_20240101_162318.jpg"></img>
+<img src="screenshot/Screenshot_20240101_162318.jpg"></img>
 
 # 📰 HOW TO SETUP CONFIG
 
