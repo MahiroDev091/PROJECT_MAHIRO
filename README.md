@@ -58,12 +58,8 @@ FACEBOOK MESSENGER BOTPACK DEVELOPED BY MAHIRO CHAN INSPIRED BY MIRAI NODEJS
 git clone https://github.com/MahiroDev091/PROJECT_MAHIRO; cd PROJECT_MAHIRO; pip install requests; pip install fbchat; pip install flask; python3 main.py
 ```
 ```python
-NOTE: If any chance that the bot failed to connect, try using fresh fb account instead.
-```
-```python
-NOTE: After running the script, open the webview link directly so that the bot can start listening.
-```
-```python
-Modifying the code is allowed but owning all rights to the code is prohibited, Changing Credit doesn't make you "PRO" in programming :v 
+INSTRUCTION/GUIDE NOTE:
+1. If any chance that the bot failed to connect, try using fresh fb account instead.
+2. After running the script, open the webview link directly so that the bot can start listening.
 ```
 
