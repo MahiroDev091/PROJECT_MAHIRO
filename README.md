@@ -31,7 +31,7 @@ FACEBOOK MESSENGER BOTPACK DEVELOPED BY MAHIRO CHAN INSPIRED BY MIRAI NODEJS
 # 💥 HOW TO USE
 
 ```python
-𝙿𝚁𝙾𝙹𝙴𝙲𝚃 𝙼𝙰𝙷𝙸𝚁𝙾 - 𝙿𝙰𝙶𝙴 1
+𝙿𝚁𝙾𝙹𝙴𝙲𝚃 𝙼𝙰𝙷𝙸𝚁𝙾 - AVAILABLE COMMAND
 ╭─❍
 ➠ .ai: ask anything
 ╰───────────⟡
