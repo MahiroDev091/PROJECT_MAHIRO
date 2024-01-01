@@ -62,4 +62,7 @@ INSTRUCTION/GUIDE NOTE:
 1. If any chance that the bot failed to connect, try using fresh fb account instead.
 2. After running the script, open the webview link directly so that the bot can start listening.
 ```
+```python
+Modifying the code is allowed but owning all rights to the code is prohibited, Changing Credit doesn't make you "PRO" in programming :v 
+```
 
