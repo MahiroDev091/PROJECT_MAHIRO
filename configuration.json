@@ -1,12 +1,9 @@
 {
-   "CONFIG": {
-      "BOT_INFO": {
-         "PREFIX": ".",
-         "ADMIN_ID": [
-            "100089164803882"
-         ],
-         "EMAIL": "EMAIL/PHONENUMBER/ID",
-         "PASSWORD": "PASSWORD"
-      }
-   }
+  "CONFIG": {
+    "BOT_INFO": {
+      "PREFIX": ".",
+      "ADMIN_ID": ["100089164803882"],
+      "APPSTATE": "appstate.json"
+    }
+  }
 }

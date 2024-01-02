@@ -9,6 +9,7 @@ import time
 import importlib.util
 import platform
 import threading
+import random
 
 try:
 				with open('configuration.json') as f:
@@ -173,9 +174,6 @@ def rainbow_light_text_print(text, end='\n'):
 
     print("\033[0m", end=end)
 
-def convert_cookie(session):
-    return '; '.join([f"{cookie['name']}={cookie['value']}" for cookie in session])
-
 app = Flask(__name__)
 listener_started = False
 listener_thread = None
@@ -189,76 +187,48 @@ def login_and_start_listener():
     with open('configuration.json') as f:
         configuration = json.load(f)
 
-    form = {
-        'adid': 'e3a395f9-84b6-44f6-a0ce-fe83e934fd4d',
-        'email': str(configuration['CONFIG']['BOT_INFO']['EMAIL']),
-        'password': str(configuration['CONFIG']['BOT_INFO']['PASSWORD']),
-        'format': 'json',
-        'device_id': '67f431b8-640b-4f73-a077-acc5d3125b21',
-        'cpl': 'true',
-        'family_device_id': '67f431b8-640b-4f73-a077-acc5d3125b21',
-        'locale': 'en_US',
-        'client_country_code': 'US',
-        'credentials_type': 'device_based_login_password',
-        'generate_session_cookies': '1',
-        'generate_analytics_claim': '1',
-        'generate_machine_id': '1',
-        'currently_logged_in_userid': '0',
-        'irisSeqID': 1,
-        'try_num': '1',
-        'enroll_misauth': 'false',
-        'meta_inf_fbmeta': 'NO_FILE',
-        'source': 'login',
-        'machine_id': 'KBz5fEj0GAvVAhtufg3nMDYG',
-        'meta_inf_fbmeta': '',
-        'fb_api_req_friendly_name': 'authenticate',
-        'fb_api_caller_class': 'com.facebook.account.login.protocol.Fb4aAuthHandler',
-        'api_key': '882a8490361da98702bf97a021ddc14d',
-        'access_token': '181425161904154|95a15d22a0e735b2983ecb9759dbaf91'
-    }
-
-    headers = {
-        'content-type': 'application/x-www-form-urlencoded',
-        'x-fb-friendly-name': 'fb_api_req_friendly_name',
-        'x-fb-http-engine': 'Liger',
-        'user-agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36'
-    }
-
-    url = 'https://b-graph.facebook.com/auth/login'
-
     try:
         os.system("clear")
-        response = requests.post(url, data=form, headers=headers)
-        response_data = response.json()
-
-        if "access_token" in response_data:
-            cookie = convert_cookie(response_data['session_cookies'])
+        try:
+            with open(configuration['CONFIG']['BOT_INFO']['APPSTATE'], 'r') as file:
+                data = json.loads(file.read())
+        except json.JSONDecodeError:
+        	print("\033[91m[ [ APPSTATE ] ] ERROR: Unable to decode JSON in '{}'.\033[0m".format(str(configuration['CONFIG']['BOT_INFO']['APPSTATE'])))
+        	sys.exit()
+        except FileNotFoundError:
+            print("\033[1m\033[91mSORRY, AN ERROR ENCOUNTERED WHILE FINDING '{}'.\033[0m".format(configuration['CONFIG']['BOT_INFO']['APPSTATE']))
+            sys.exit()
+        
+        if not data:
+            sys.exit("\033[91m[ [ APPSTATE ] ] YOUR {} DOESN'T HAVE CONTENT. \033[0m".format(str(configuration['CONFIG']['BOT_INFO']['APPSTATE'])))
+        else:
+            cookie = '; '.join([f"{entry['key']}={entry['value']}" for entry in data if entry['key'] in {'c_user', 'xs', 'fr', 'datr'}])
             key_value_pairs = [pair.strip() for pair in cookie.split(";")]
             session_cookies = {key: value for key, value in (pair.split("=") for pair in key_value_pairs)}
-
+            #print(session_cookies)
             rainbow_light_text_print("[ [ NAME ] ] PROJECT MAHIRO V1")
             rainbow_light_text_print("[ [ VERSION ] ] Version: 1.0.1")
             time.sleep(0.5)
             rainbow_light_text_print("[ [ PLATFORM VERSION ] ] {}".format(platform.version()))
+            full_url = url_for('index', _external=True)
+            print(full_url)
+            rainbow_light_text_print("[ [ UPTIME ] ] " + requests.get('https://y7sj8t-3000.csb.app/ping?url='+full_url).json()['message'].upper())
             rainbow_light_text_print("[ [ DESCRIPTION ] ] A Facebook Messenger Bot developed by Mahiro chan.")
-            if str(configuration['CONFIG']['BOT_INFO']['PREFIX']) == "" or " " in configuration['CONFIG']['BOT_INFO']['PREFIX'] or len(configuration['CONFIG']['BOT_INFO']['PREFIX']) != 1:
-                sys.exit("\033[91m[ [ ERROR ] ] PLEASE CHECK THE PREFIX, PREFIX MUST HAVE VALUE AND DOESN'T HAVE SPACE AND ONLY ONE SYMBOL/LETTER. \033[0m")
-            else:
-                try:
-                    bot = MessBot(' ', ' ', session_cookies=session_cookies)
-                    rainbow_light_text_print("[ [ CONNECTING ] ] {}".format(str(bot.isLoggedIn()).upper()))
-                except:
-                    sys.exit("\033[91m[ [ ERROR ] ] FAILED TO CONNECT TO SERVER, TRY TO RERUN TO PROGRAM. \033[0m")
-
+        
+        if str(configuration['CONFIG']['BOT_INFO']['PREFIX']) == "" or " " in configuration['CONFIG']['BOT_INFO']['PREFIX'] or len(configuration['CONFIG']['BOT_INFO']['PREFIX']) != 1:
+            sys.exit("\033[91m[ [ ERROR ] ] PLEASE CHECK THE PREFIX, PREFIX MUST HAVE VALUE AND DOESN'T HAVE SPACE AND ONLY ONE SYMBOL/LETTER. \033[0m")
+        else:
+            try:
+                bot = MessBot(' ', ' ', session_cookies=session_cookies)
+                rainbow_light_text_print("[ [ CONNECTING ] ] {}".format(str(bot.isLoggedIn()).upper()))
+            except:
+                sys.exit("\033[91m[ [ ERROR ] ] FAILED TO CONNECT TO SERVER, TRY TO RERUN TO PROGRAM. \033[0m")
+                
             if not listener_started:
                 listener_started = True
                 listener_thread = threading.Thread(target=bot.listen)
                 listener_thread.start()
-
-            return render_template('mahiro.html', status="Bot is successfully activated!")  
-        else:
-            return render_template('mahiro.html', status=str(response_data['error']['message'])) 
-
+                return render_template('mahiro.html', status="Bot is successfully activated!")
     except Exception as e:
         print(f"Error during login: {e}")
         return render_template('mahiro.html', status="Error during login.") 
@@ -268,4 +238,4 @@ def index():
     return login_and_start_listener()
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=random.randint(1000,9999))
