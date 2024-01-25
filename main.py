@@ -115,10 +115,10 @@ class MessBot(Client):
             			break
             	if found_command:
             		reply = f"""⇒ Name: {command[0]}
-⇒ Version: {command[3]}
-⇒ Description: {command[1]}
+⇒ Version: {command[3] if command[3] else "No data!"}
+⇒ Description: {command[1] if command[1] else "No data!"}
 ⇒ Cooldown: {command[2]}s
-⇒ Credits: {command[4]}"""
+⇒ Credits: {command[4] if command[4] else "No data!"}"""
             		self.sendmessage(author_id, thread_id, thread_type, reply)
             	else:
             		reply = "❌𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙽𝙾𝚃 𝙵𝙾𝚄𝙽𝙳!"
@@ -135,7 +135,7 @@ class MessBot(Client):
                 end_index = start_index + commands_per_page
                 current_page_commands = self.available_commands[start_index:end_index]
                 if current_page_commands:
-                    reply = f"𝙿𝚁𝙾𝙹𝙴𝙲𝚃 𝙼𝙰𝙷𝙸𝚁𝙾 - 𝙿𝙰𝙶𝙴 {page_number}\n" + "\n".join([f"╭─❍\n➠ {prefix}{name}: {description}\n╰───────────⟡" for name, description, _, _, _ in current_page_commands] + [f"""╭─❍\n➠{prefix}setprefix: Change the prefix of the bot[ADMIN ONLY].\n╰───────────⟡"""])
+                    reply = f"𝙿𝚁𝙾𝙹𝙴𝙲𝚃 𝙼𝙰𝙷𝙸𝚁𝙾 - 𝙿𝙰𝙶𝙴 {page_number}\n" + "\n".join([f"╭─❍\n➠ {prefix}{name}: {description if description else 'No data!'}\n╰───────────⟡" for name, description, _, _, _ in current_page_commands] + [f"""╭─❍\n➠{prefix}setprefix: Change the prefix of the bot[ADMIN ONLY].\n╰───────────⟡"""])
                     if end_index < len(self.available_commands):
                         reply += f"\nUse `{prefix}list {page_number + 1}` to view the next page."
                     self.sendmessage(author_id, thread_id, thread_type, reply)
