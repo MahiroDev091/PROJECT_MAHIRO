@@ -22,7 +22,125 @@ FACEBOOK MESSENGER BOTPACK DEVELOPED BY MAHIRO CHAN INSPIRED BY MIRAI NODEJS
          "ADMIN_ID": [
             "100089164803882" - CHANGE THIS ID TO YOUR FACEBOOK ID OR JUST INSERT NEW ID.
          ],
-         "APPSTATE": "appstate.json"
+         "APPSTATE": "[
+    {
+        "key": "dbln",
+        "value": "%7B%2261551488702462%22%3A%2249cy3tka%22%2C%22100094312697216%22%3A%22K7YOJ1Ys%22%2C%2261550115551529%22%3A%22gmA5R1pX%22%7D",
+        "domain": "facebook.com",
+        "path": "/login/device-based/",
+        "hostOnly": false,
+        "creation": "2024-01-25T02:35:01.072Z",
+        "lastAccessed": "2024-01-25T02:35:01.072Z"
+    },
+    {
+        "key": "sb",
+        "value": "6a6TZf_XBpGEtLh8RgJ6X1U2",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2024-01-25T02:35:01.072Z",
+        "lastAccessed": "2024-01-25T02:35:01.072Z"
+    },
+    {
+        "key": "datr",
+        "value": "XDitZW91AuNp98Oj-M3p4yrC",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2024-01-25T02:35:01.072Z",
+        "lastAccessed": "2024-01-25T02:35:01.072Z"
+    },
+    {
+        "key": "locale",
+        "value": "tl_PH",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2024-01-25T02:35:01.072Z",
+        "lastAccessed": "2024-01-25T02:35:01.072Z"
+    },
+    {
+        "key": "vpd",
+        "value": "v1%3B560x360x2",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2024-01-25T02:35:01.072Z",
+        "lastAccessed": "2024-01-25T02:35:01.072Z"
+    },
+    {
+        "key": "wd",
+        "value": "360x560",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2024-01-25T02:35:01.072Z",
+        "lastAccessed": "2024-01-25T02:35:01.072Z"
+    },
+    {
+        "key": "fr",
+        "value": "04TzKX78pj2dJf5C1.AWWLFQmFFFnR3FhRm68UZX5W8Mc.BlrThc.Yo.AAA.0.0.BlsG5F.AWUFkubrAdM",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2024-01-25T02:35:01.072Z",
+        "lastAccessed": "2024-01-25T02:35:01.072Z"
+    },
+    {
+        "key": "c_user",
+        "value": "61550115551529",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2024-01-25T02:35:01.072Z",
+        "lastAccessed": "2024-01-25T02:35:01.072Z"
+    },
+    {
+        "key": "xs",
+        "value": "7%3AJTeHmrfOLRKhJA%3A2%3A1706061381%3A-1%3A7915",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2024-01-25T02:35:01.072Z",
+        "lastAccessed": "2024-01-25T02:35:01.072Z"
+    },
+    {
+        "key": "fbl_cs",
+        "value": "AhBenzZHQ6nuAPqLL9GNhzNHGE50S1pGQWRGd0h5OXc9YUV0Z215VD1BWg",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2024-01-25T02:35:01.072Z",
+        "lastAccessed": "2024-01-25T02:35:01.072Z"
+    },
+    {
+        "key": "fbl_ci",
+        "value": "258026290225262",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2024-01-25T02:35:01.072Z",
+        "lastAccessed": "2024-01-25T02:35:01.072Z"
+    },
+    {
+        "key": "fbl_st",
+        "value": "101228389%3BT%3A28435834",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2024-01-25T02:35:01.072Z",
+        "lastAccessed": "2024-01-25T02:35:01.072Z"
+    },
+    {
+        "key": "wl_cbv",
+        "value": "v2%3Bclient_version%3A2398%3Btimestamp%3A1706150097",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2024-01-25T02:35:01.072Z",
+        "lastAccessed": "2024-01-25T02:35:01.072Z"
+    }
+]"
       }
    }
 }
