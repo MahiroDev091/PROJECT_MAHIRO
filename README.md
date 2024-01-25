@@ -51,13 +51,13 @@ FACEBOOK MESSENGER BOTPACK DEVELOPED BY MAHIRO CHAN INSPIRED BY MIRAI NODEJS
 ➠.setprefix: Change the prefix of the bot[ADMIN ONLY].
 ╰───────────⟡
 ```
+# ❤ HIGHLY CONTRIBUTE TO THIS PROJECT
+```
+Special Thanks to Kenlie Jugarap and Choru Tiktoker for helping me to this project!
+```
 
 # 📰 HOW TO SETUP
 
 ```python
 git clone https://github.com/MahiroDev091/PROJECT_MAHIRO; cd PROJECT_MAHIRO; pip install requests; pip install fbchat; pip install flask; python3 main.py
 
-# ❤ HIGHLY CONTRIBUTE TO THIS PROJECT
-```python
-Special Thanks to Kenlie Jugarap and Choru Tiktoker
-```
