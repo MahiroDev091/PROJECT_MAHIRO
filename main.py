@@ -90,10 +90,13 @@ class MessBot(Client):
                             if 'messages' in response:
                             	for text_message in response['messages']:
                             		self.sendmessage(author_id, thread_id, thread_type, str(text_message))
+                            if 'sendfromurl' in response:
+                            	for file_url in response['sendfromurl']:
+                            		self.sendRemoteFiles(file_urls=file_url, message=None, thread_id=thread_id, thread_type=thread_type)
                             if 'images' in response:
                             	for image_path in response['images']:
                             		self.sendLocalImage(
-    image_path,message=Message(text=""),thread_id=thread_id,thread_type=thread_type)
+    image_path,message=None,thread_id=thread_id,thread_type=thread_type)
                             def reset_cooldown2():
                                 self.cooldowns.setdefault(loop_command_name, False)
                                 self.cooldown_flag_2 = True 
