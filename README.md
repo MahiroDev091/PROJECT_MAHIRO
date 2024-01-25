@@ -59,5 +59,5 @@ Special Thanks to Kenlie Jugarap and Choru Tiktoker for helping me to this proje
 # 📰 HOW TO SETUP
 
 ```python
-git clone https://github.com/MahiroDev091/PROJECT_MAHIRO; cd PROJECT_MAHIRO; pip install requests; pip install fbchat; pip install flask; python3 main.py
+git clone https://github.com/MahiroDev091/PROJECT_MAHIRO; cd PROJECT_MAHIRO; pip install requests; pip install fbchat; pip install flask; python3 app.py
 
