@@ -4,9 +4,14 @@ FACEBOOK MESSENGER BOTPACK DEVELOPED BY MAHIRO CHAN INSPIRED BY MIRAI NODEJS
 - Webview added!
 - Appstate method support now
 - Now you can add your own commands.
-- Version 1.1.2 [NEW VERSION]
-- New version will upload soon.
-- Easy to use.
+- Version 1.1.3 [NEW VERSION]
+
+<b>NEW FEATURES ADDED: </b>
+- New configuration features added!
+- New command format (Now you can use all features of fbchat without having any issues).
+- Cooldown issue fixed!
+- Database for currencies added!
+- New UI Added!
 
 # 📷 SCREENSHOTS
 
@@ -22,7 +27,15 @@ FACEBOOK MESSENGER BOTPACK DEVELOPED BY MAHIRO CHAN INSPIRED BY MIRAI NODEJS
          "ADMIN_ID": [
             "100089164803882" - CHANGE THIS ID TO YOUR FACEBOOK ID OR JUST INSERT NEW ID.
          ],
-         "APPSTATE": "appstate.json"
+         "USER-AGENT": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36",
+         "SET_TYPING": "FALSE", - CHANGE THIS TO TRUE IF YOU WANT TO TURN ON TYPING INDICATOR (ANIMATION)
+         "APPSTATE": "appstate.json",
+         "PACKAGE": [ - IN THIS PACKAGE ARRAY THIS IS WHERE YOU WILL ADD ALL LIBRARY YOU WANT TO PIP INSTALL
+ 	        "flask",
+   	      "fbchat",
+   	      "pystyle",
+     	    "requests"
+         ]
       }
    }
 }
