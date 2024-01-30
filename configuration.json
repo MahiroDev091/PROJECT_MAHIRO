@@ -1,0 +1,19 @@
+{
+   "CONFIG": {
+      "BOT_INFO": {
+         "PREFIX": ".",
+         "ADMIN_ID": [
+            "100089164803882"
+         ],
+         "USER-AGENT": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36",
+         "SET_TYPING": "FALSE",
+         "APPSTATE": "appstate.json",
+         "PACKAGE": [
+ 	        "flask",
+   	      "fbchat",
+   	      "pystyle",
+     	    "requests"
+         ]
+      }
+   }
+}
