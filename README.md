@@ -6,7 +6,7 @@ FACEBOOK MESSENGER BOTPACK DEVELOPED BY MAHIRO CHAN INSPIRED BY MIRAI NODEJS
 - Now you can add your own commands.
 - Version 1.1.3 [NEW VERSION]
 
-**NEW FEATURES ADDED: **
+NEW FEATURES ADDED:
 - New configuration features added!
 - New command format (Now you can use all features of __[fbchat](https://fbchat.readthedocs.io/en/stable/)__ without having any issues). 
 - Cooldown issue fixed!
@@ -32,9 +32,9 @@ FACEBOOK MESSENGER BOTPACK DEVELOPED BY MAHIRO CHAN INSPIRED BY MIRAI NODEJS
          "APPSTATE": "appstate.json",
          "PACKAGE": [ - IN THIS PACKAGE ARRAY THIS IS WHERE YOU WILL ADD ALL LIBRARY YOU WANT TO PIP INSTALL
  	        "flask",
-   	      "fbchat",
-   	      "pystyle",
-     	    "requests"
+           "fbchat",
+           "pystyle",
+     	     "requests"
          ]
       }
    }
@@ -73,4 +73,3 @@ Special Thanks to Kenlie Jugarap and Choru Tiktoker for helping me to this proje
 
 ```python
 git clone https://github.com/MahiroDev091/PROJECT_MAHIRO; cd PROJECT_MAHIRO; pip install -r requirements.txt; python3 app.py
-
